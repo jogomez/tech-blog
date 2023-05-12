@@ -1,0 +1,21 @@
+<div class="columns is-half mx-6 mt-3 has-text-dark has-text-centered is-3 ml-6">
+<div class="column">
+    <h1>{{post.title}}</h1>
+    <p>{{post.content}}</p>
+
+    <h2>Comments</h2>
+    <ul>
+        {{#each comments}}
+            <li>{{this}}</li>
+        {{/each}}
+    </ul>
+
+    <form class="form new-comment-form px-6">
+    <div class="mt-2">
+        <label for="post-comment">Join the conversation:</label>
+        <input type="text" class="input is-small mt-1" id="comment" name="comment" placeholder="Enter your comment">
+        <button type="submit">Comment</button>
+    </div>
+    </form>
+</div>
+<script src="/js/createComment.js"></script>

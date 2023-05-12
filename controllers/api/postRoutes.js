@@ -2,12 +2,13 @@ const router = require("express").Router();
 const { Post } = require("../../models");
 
 //create post
+//http://localhost:3001/api/post/
 router.post("/", async (req, res) => {
     try {
         const postData = await Post.create({
             title: req.body.title,
             content: req.body.content,
-            creator_id: req.body.creator_id,
+            creator_id: req.session.user_id,
         });
         return res.status(200).json(postData);
     } catch (err) {

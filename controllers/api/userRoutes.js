@@ -12,7 +12,7 @@ router.post("/", async (req, res) => {
         });
         req.session.save(() => {
             req.session.loggedIn = true;
-            req.session.loggedInUserData = userData;
+            req.session.user_id = userData.id;
             return res.status(200).json(userData);
         });
     } catch (err) {
@@ -47,7 +47,7 @@ router.post("/login", async (req, res) => {
         }
         //save data to session for use elsewhere
         req.session.save(() => {
-            req.session.loggedInUserData = userData;
+            req.session.user_id = userData.id;
             req.session.loggedIn = true;
             console.log("Session cookie: ", req.session.cookie);
 

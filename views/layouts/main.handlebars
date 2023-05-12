@@ -47,7 +47,8 @@
                             </a>
                             <a
                                 class="navbar-item is-size-5 has-text-weight-semibold"
-                                href="/logout/"
+                                href="#"
+                                id = "logout"
                             >
                                 Logout
                             </a>
@@ -71,6 +72,8 @@
         </nav>
         <!-- END NAV -->
         {{{body}}}
-        <script src="/js/main.js"></script>
+        {{#if loggedIn}}
+            <script src="/js/logout.js"></script>
+        {{/if}}
     </body>
 </html>
