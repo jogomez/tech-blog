@@ -2,25 +2,25 @@
 <section class="hero ">
     <div class="hero-body">
     <div class="container">
-        <div class="columns">
+{{!--         <div class="columns">
         <div class="column is-8 is-offset-2">
             <figure class="image is-16by9">
             <a href="/posts/{{posts.0.0.id}}"><img src="/images/pexels-pixabay-270366.jpg" alt=""></a>
             </figure>
         </div>
-        </div>
-        <section class="section">
+        </div> --}}
+        {{!-- <section class="section">
         <div class="columns">
             <div class="column is-8 is-offset-2">
             <div class="content is-medium">
-                <h2 class="subtitle is-4">{{format_time posts.0.0.createdAt}}</h2>
-                <h1 class="title"><a href="/posts/{{posts.0.0.id}}">{{posts.0.0.title}}</a></h1>
-                <h6>by {{posts.0.0.user.username}}</h6>
-                <p>{{posts.0.0.content}}</p>
+                <h2 class="subtitle is-4">{{format_time posts.createdAt}}</h2>
+                <h1 class="title"><a href="/posts/{{posts.id}}">{{posts.title}}</a></h1>
+                <h6>by {{posts.user.username}}</h6>
+                <p>{{posts.content}}</p>
             </div>
             </div>
         </div>
-        </section>
+        </section> --}}
         <div class="is-divider"></div>
     </div>
     </div>
@@ -30,11 +30,11 @@
     <div class="hero-body-neg">
     <div class="container">
         {{#each posts as |post|}}
-        {{#if @first}}
+        {{!-- {{#if @first}}
             <!-- 1st post goes at the top -->
-        {{else}}
+        {{else}} --}}
             {{> post-summary}}
-        {{/if}}
+        {{!-- {{/if}} --}}
         {{/each}}
     </div>
     </div>

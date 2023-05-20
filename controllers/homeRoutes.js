@@ -40,7 +40,8 @@ router.get("/", async (req, res) => {
         res.render("index", {
             loggedIn: req.session.loggedIn,
             loggedInUserData: req.session.loggedInUserData,
-            posts: packagedPosts,
+            //posts: packagedPosts,
+            posts
         });
     } catch (err) {
         res.status(500).json(err);

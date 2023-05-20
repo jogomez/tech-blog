@@ -3,7 +3,7 @@ const newFormHandler = async (event) => {
     event.preventDefault();
     const comment = document.querySelector('.comment-input').value.trim();
     const post_id = event.target.getAttribute("data-id");
-    alert(post_id+comment);
+    
 
     if (comment) {
         const response = await fetch(`/api/comment`, {
@@ -17,7 +17,7 @@ const newFormHandler = async (event) => {
         if (response.ok) {
             window.location.reload();
         } else {
-            alert('Failed to create a comment');
+            console.log('Failed to create a comment');
         }
     }
 };
